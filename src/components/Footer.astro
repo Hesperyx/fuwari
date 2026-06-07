@@ -1,21 +1,41 @@
 ---
-
 import { profileConfig } from "../config";
 import { url } from "../utils/url-utils";
 
 const currentYear = new Date().getFullYear();
 ---
 
-<!--<div class="border-t border-[var(&#45;&#45;primary)] mx-16 border-dashed py-8 max-w-[var(&#45;&#45;page-width)] flex flex-col items-center justify-center px-6">-->
-<div class="transition border-t border-black/10 dark:border-white/15 my-10 border-dashed mx-32"></div>
-<!--<div class="transition bg-[oklch(92%_0.01_var(&#45;&#45;hue))] dark:bg-black rounded-2xl py-8 mt-4 mb-8 flex flex-col items-center justify-center px-6">-->
-<div class="transition border-dashed border-[oklch(85%_0.01_var(--hue))] dark:border-white/15 rounded-2xl mb-12 flex flex-col items-center justify-center px-6">
-    <div class="transition text-50 text-sm text-center">
-        &copy; <span id="copyright-year">{currentYear}</span> {profileConfig.name}. All Rights Reserved. /
-        <a class="transition link text-[var(--primary)] font-medium" target="_blank" href={url('rss.xml')}>RSS</a> /
-        <a class="transition link text-[var(--primary)] font-medium" target="_blank" href={url('sitemap-index.xml')}>Sitemap</a><br>
-        Powered by
-        <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://astro.build">Astro</a> &
-        <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://github.com/saicaca/fuwari">Fuwari</a>
+<footer class="mt-10 mb-6 w-full">
+  <div class="h-px bg-gradient-to-r from-transparent via-black/15 dark:via-white/15 to-transparent mx-8"></div>
+  <div class="mt-6 w-full px-4 sm:px-6">
+    <div class="mx-auto w-full max-w-3xl bg-gradient-to-r from-[oklch(97%_0.01_var(--hue))] to-[oklch(95%_0.02_var(--hue))]
+                dark:from-[oklch(18%_0.02_var(--hue))] dark:to-[oklch(15%_0.03_var(--hue))]
+                rounded-xl p-5 border border-black/5 dark:border-white/10">
+      <!-- 内容区域 -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
+        <!-- 左侧：版权和链接 -->
+        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3 text-black/70 dark:text-white/70">
+          <span>&copy; {currentYear} {profileConfig.name}</span>
+          <span class="text-black/30 dark:text-white/30">&bull;</span>
+          <a class="hover:text-[var(--primary)] transition-colors font-medium" target="_blank" href={url('rss.xml')}>RSS</a>
+          <span class="text-black/30 dark:text-white/30">&bull;</span>
+          <a class="hover:text-[var(--primary)] transition-colors font-medium" target="_blank" href={url('sitemap-index.xml')}>Sitemap</a>
+        </div>
+        <!-- 右侧：EdgeOne Pages 标识 -->
+        <a target="_blank" href="https://pages.edgeone.ai/" class="transition-transform hover:scale-105">
+          <img src="/images/external/EdgeOne.webp" alt="EdgeOne Pages" class="h-4 w-auto shrink-0 dark:invert dark:hue-rotate-180 opacity-70 hover:opacity-100 transition-opacity" />
+        </a>
+      </div>
+      <!-- 备案信息 -->
+      <div class="mt-2 pt-2 border-t border-black/10 dark:border-white/10
+                  flex flex-col items-center gap-2 text-xs text-black/50 dark:text-white/50">
+        <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-2">
+          <a class="flex items-center gap-1 hover:text-[var(--primary)] transition-colors font-medium" target="_blank" href="https://beian.miit.gov.cn/">
+            <img class="h-[14px] w-auto shrink-0" src="/images/external/beian.png" alt="备案" />
+            <span>冀ICP备2024090694号-1</span>
+          </a>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+</footer>
