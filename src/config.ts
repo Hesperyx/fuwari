@@ -8,26 +8,26 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "Fuwari",
+	title: "Lucky's Blog",
 	subtitle: "Demo Site",
-	lang: "en", // Language code, e.g. 'en', 'zh_CN', 'ja', etc.
+	lang: "zh_CN", // 语言,例如'en', 'zh_CN', 'ja', etc.
 	themeColor: {
-		hue: 250, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
-		fixed: false, // Hide the theme color picker for visitors
+		hue: 250, // 主题颜色的默认色调, 0-360 例如. red: 0, teal: 200, cyan: 250, pink: 345
+		fixed: false, // 对访问者隐藏主题颜色选择器
 	},
 	banner: {
-		enable: false,
-		src: "assets/images/demo-banner.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
-		credit: {
+		enable: false, //是否开启banner
+		src: "assets/images/demo-banner.png", // 相对于 /src 目录。如果 /public 目录以 '/' 开头，则相对于该目录。
+		position: "center", //仅支持 'top'、'center' 和 'bottom'。默认为 'center'
+		credit: {  //图片版权信息描述
 			enable: false, // Display the credit text of the banner image
 			text: "", // Credit text to be displayed
 			url: "", // (Optional) URL link to the original artwork or artist's page
 		},
 	},
-	toc: {
-		enable: true, // Display the table of contents on the right side of the post
-		depth: 2, // Maximum heading depth to show in the table, from 1 to 3
+	toc: { // 侧边栏目录
+		enable: true, // 是否在侧边栏中显示
+		depth: 2, // 表格中显示的最大标题深度，范围为 1 到 3。
 	},
 	favicon: [
 		// Leave this array empty to use the default favicon
@@ -54,7 +54,7 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/demo-avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "Lorem Ipsum",
+	name: "Lucky",
 	bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 	links: [
 		{
