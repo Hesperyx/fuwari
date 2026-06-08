@@ -89,6 +89,7 @@ export type BlogPostData = {
 	description: string;
 	tags: string[];
 	draft?: boolean;
+	comments?: boolean;
 	image?: string;
 	category?: string;
 	prevTitle?: string;
@@ -100,3 +101,12 @@ export type BlogPostData = {
 export type ExpressiveCodeConfig = {
 	theme: string;
 };
+
+export type CommentConfig = {
+  waline?: WalineConfig
+}
+
+type WalineConfig = {
+  serverURL: string
+  login?: string
+}
